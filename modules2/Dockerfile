@@ -8,7 +8,7 @@ ENV GO111MODULE=on \
     VERSION=v0.0.1
 WORKDIR /var
 COPY httpserver/main.go .
-RUN go build -o /var/main.go .
+RUN go build /var/main.go
 
 FROM alpine
 COPY --from=builder /var/main /
