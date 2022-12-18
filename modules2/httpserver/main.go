@@ -37,7 +37,6 @@ func writeHeader(w http.ResponseWriter,r *http.Request)  {
 
 //读取当前系统的环境变量中的 VERSION 配置，并写入 response header
 func getEnv(w http.ResponseWriter,r *http.Request)  {
-	os.Setenv("VERSION", "v0.0.1")
 	version := os.Getenv("VERSION")
 	w.Header().Set("VERSION", version)
 }
